@@ -90,11 +90,11 @@ public class MappingSet implements Serializable {
             // We've seen this field before.
             Field previousField = (Field)entry[0];
             // ensure that it doesn't conflict
-            if (!previousField.type().equals(field.type())) {
+            /*if (!previousField.type().equals(field.type())) {
                 throw new EsHadoopIllegalArgumentException("Incompatible types found in multi-mapping: " +
                         "Field ["+fullName+"] has conflicting types of ["+previousField.type()+"] and ["+
                         field.type()+"].");
-            }
+            }*/
             // If it does not conflict, visit it's children if it has them
             if (FieldType.isCompound(field.type())) {
                 Map<String, Object[]> subTable = (Map<String, Object[]>)entry[1];
